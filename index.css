@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+}
+body{
+    background-image: url("img/background.jpg");
+}
+.ramka{
+    margin: 15px;
+}
+.jumbotron{
+    background: darkgrey;
+    margin: 20px;
+    width: 100%;
+
+}
+.link{
+    cursor: pointer;
+}
+
+.carousel-caption{
+    background-color: rgba(0,0,0,.5);
+}
+.cart {
+    overflow:hidden;
+    padding:10px 3px;
+    background: yellow;
+}
+.fitc{
+    width: 100%;
+    object-fit: cover;
+    height: 900px;
+}
+.fit{
+    width: 100%;
+    object-fit: cover;
+    height: 600px;
+}
+.highchart{
+    position: absolute;
+    bottom: -20%;
+    left: 20%;
+}
+table{
+    visibility: hidden;
+}
+
+#formularz-logo {
+    background: linear-gradient(to bottom, white, darkgrey);
+    text-align: center;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap.minsketchy.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        });
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+
+
+    </script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="st.css">
+
+</head>
+<body>
+<h1 class="display-3">Trylogia sequeli</h1>
+<p class="lead">Trylogia seqeli to powstające obecnie pod szyldem The Walt Disney Company filmy kinowe, w założeniach
+    stanowiące trzecią trylogię Gwiezdnych wojen, której akcja rozpocznie się około trzydzieści lat po wydarzeniach z
+    Powrotu Jedi i przedstawi inną historię niż materiały wchodzące w skład Expanded Universe. Pierwszy film nowej
+    trylogii, Przebudzenie Mocy, zadebiutował 18 grudnia 2015 roku. Ostatni Jedi, czyli ósma część sagi, pojawiła się w
+    kinach 15 grudnia 2017 roku. Skywalker. Odrodzenie zadebiutuje natomiast 20 grudnia 2019 roku.</p>
+<hr class="my-4">
+<p class="lead">
+                <span class="btn btn-primary btn-lg" data-toggle="tooltip" title="Link zewnętrzny" onclick="window.open('http://www.ossus.pl/biblioteka/Trylogia_sequeli')"
+                      role="button">Dowiedz się więcej!</span>
+</p>
+<div class="row justify-content-center lighbox-section">
+    <img alt="Rey" src="img/st/p1.jpg" onclick="openModal();currentSlide(1)" class="hover obr">
+    <img alt="Poe Dameron" src="img/st/p2.jpg" onclick="openModal();currentSlide(1)" class="hover obr">
+    <img alt="Finn" src="img/st/p3.jpg" onclick="openModal();currentSlide(1)" class="hover obr">
+</div>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()"></span>
+    <div class="modal-content">
+
+        <div class="mySlides">
+            <div class="numbertext">1 / 3</div>
+            <img alt="Rey" src="img/st/p1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 3</div>
+            <img alt="Poe Dameron" src="img/st/p2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 3</div>
+            <img alt="Finn" src="img/st/p3.jpg" style="width:100%">
+        </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

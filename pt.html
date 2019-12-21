@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap.minsketchy.css">
+    <link rel="stylesheet" href="styl2.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            slider();
+            $("#roll")
+                .mouseover(function() {
+                    var src = $(this).attr("src").match(/[^\.]+/) + "over.png";
+                    zdj=$(this).attr("src", src);
+                })
+                .mouseout(function() {
+                    var src = $(this).attr("src").replace("over.png", ".jpg");
+                    zdj=$(this).attr("src", src);
+                    zdj.fadeIn();
+                });
+        });
+        function slider(){
+            //wybierz slade kolejny (prawy czy lewy) i wyswietlSlide
+            poprz=$(".prev");
+            nast=$(".next");
+            slide=$(".slade");
+            aktualny=0;
+            liczba=slide.length;
+            //alert(liczba);
+            // wylicz aktualny
+            nast.click(function () {
+                if (aktualny===liczba-1)
+                    aktualny=0;
+                else
+                    aktualny++;
+                wyswietlSlajd(aktualny);
+            });
+            poprz.click(function () {
+                //policz aktualny
+                if (aktualny===0)
+                    aktualny=liczba-1;
+                else
+                    aktualny--;
+                wyswietlSlajd(aktualny);
+            });
+        }
+
+        function wyswietlSlajd(aktualny) {
+            sliderco=$("#slider #slide");
+            sliderco.fadeOut(200,function () {
+                slide.removeClass("active");
+                slide.eq(aktualny).addClass("active");
+                sliderco.fadeIn();
+
+            })
+
+        }
+    </script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+
+</head>
+<body>
+<h1 class="display-3">Trylogia prequeli</h1>
+<p class="lead">Trylogia prequeli to seria trzech filmów z sagi Gwiezdnych wojen, ukazujących wydarzenia sprzed
+    oryginalnej trylogii. Filmy te, znane jako epizody I-III ukazywały się w latach 1999-2005. W przeciwieństwie do
+    pierwszej trylogii, wszystkie obrazy zostały wyreżyserowane przez George'a Lucasa.</p>
+<p class="lead">
+    Prequele przedstawiają ostatnie lata istnienia Republiki Galaktycznej, wspieranej przez licznych wówczas Jedi. Filmy
+    ukazują wydarzenia, które doprowadziły do powstania Imperium, drogę młodego Anakina Skywalkera na ciemną stronę, a
+    także wspomniane w Nowej nadziei wojny klonów. W trylogii ważną rolę odgrywają znani z pierwszych filmów Obi-Wan
+    Kenobi, Yoda i Sheev Palpatine, powracają także między innymi R2-D2, C-3PO, Boba Fett, Chewbacca i Jabba. Epizody
+    I-III wprowadzają też do sagi zupełnie nowych bohaterów, jak Padmé, matkę Luke'a i Lei, mistrza Windu, hrabiego
+    Dooku czy generała Grievousa.</p>
+<hr class="my-4">
+<div id="slider">
+    <a class="prev navi">&#60;</a>
+    <a class="next navi">&#62;</a>
+    <div id="slide">
+        <div class="slade active"><img id="roll" class="fit" src="img/pt/p1.jpg" alt="Obi Wan Kenobi">
+            <div class="caption"><h1>Obi Wan Kenobi</h1></div>
+        </div>
+        <div class="slade"><img class="fit" src="img/pt/p2.jpg" alt="Anakin Skywalker">
+            <div class="caption"><h1>Anakin Skywalker</h1></div></div>
+            <div class="slade"><img class="fit" src="img/pt/p3.jpg" alt="Padme Amidala">
+                <div class="caption"> <h1>Padme Amidala</h1>
+            </div>
+        </div>
+
+    </div>
+	</div>
+    <p class="lead">
+                <span class="btn btn-primary btn-lg" data-toggle="tooltip" title="Link zewnętrzny"
+                      onclick="window.open('http://www.ossus.pl/biblioteka/Trylogia_prequeli')"
+                      role="button">Dowiedz się więcej!</span>
+    </p>
+
+</body>
+</html>

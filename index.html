@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap.minsketchy.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('table.highchart').highchartTable();
+            $('a').click(function () {
+                var thisA=$(this);
+                $('#strona').fadeOut(1000, function() {
+                    $('#strona').load(thisA.attr('href'),function () {
+                        $('#strona').fadeIn(1000);
+
+                    });
+
+                });
+                return false;
+            });
+        })
+    </script>
+	<script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/skrypt.js"></script>
+    <script src="js/picturefill.min.js"></script>
+    <script src="js/jquery.highchartTable-min.js"></script>
+    <script src="js/highcharts.js"></script>
+
+</head>
+<body>
+<div class="text-center">
+    <span class="link" data-toggle="tooltip" title="Kliknij, aby wrócić do strony głównej" onclick="location='index.html'"><img alt="logosw" class="rounded" src="img/logo.png"></span>
+</div>
+<div class="container-fluid">
+    <div class="row ramka">
+        <nav class="col-md-12 ramka navbar navbar-expand-sm bg-primary navbar-dark">
+            <ul class="navbar-nav nav-justified w-100">
+                <li class="nav-item page"><a href="ot.html" class="nav-link"> Oryginalna Trylogia</a></li>
+                <li class="nav-item page"><a href="pt.html" class="nav-link"> Trylogia Prequeli</a></li>
+                <li class="nav-item page"><a href="st.html" class="nav-link"> Trylogia Sequeli</a></li>
+            </ul>
+        </nav>
+    </div>
+        <div id="strona" class="jumbotron">
+            <h1 class="display-3">Slowem wstepu</h1>
+            <p class="lead">Gwiezdne wojny – amerykańska franczyza filmowa z gatunku space opera oparta
+                na trylogii filmów stworzonej przez George’a Lucasa.
+
+                Franczyza została zapoczątkowana w 1977 roku premierą filmu Star Wars (któremu później dodano podtytuł:
+                Część IV – Nowa nadzieja). Stał się on światowym popkulturowym fenomenem. W kolejnych latach
+                LucasFilm wyprodukował dwa sequele – Imperium kontratakuje (1980) oraz Powrót Jedi (1983). Wszystkie
+                trzy filmy stanowią oryginalną trylogię Gwiezdnych wojen.
+
+                Trylogia prequeli została wydana w latach 1999-2005.
+
+                W 2015 roku odbyła się premiera filmu Gwiezdne wojny: Przebudzenie Mocy, który zapoczątkował nową
+                trylogię sequeli. Wszystkie osiem filmów (oraz spin-offy – Łotr 1 i Han Solo) zostało nominowanych do
+                Oscara, lecz ostatecznie tylko dwa pierwsze otrzymały go i osiągnęły komercyjne sukcesy, zarabiając 9,3
+                mld USD. Gwiezdne wojny zajęły 2. miejsce w rankingu najbardziej dochodowych serii filmowych.</p>
+            <hr class="my-4">
+            <p class="lead">
+                <span class="btn btn-primary btn-lg" data-toggle="tooltip" title="Link zewnętrzny" onclick="window.open('https://pl.wikipedia.org/wiki/Gwiezdne_wojny')" role="button">Dowiedz się więcej!</span>
+            </p>
+			                <h2> Star wars w liczbach</h2>
+            <table class="highchart" data-graph-container-before="1" data-graph-type="pie">
+                <thead>
+                <tr>
+                    <th>Tytul</th>
+                    <th>Zarobki (uwzgledniaja inflacje) w $</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Ep1: Mroczne widmo</td>
+                    <td>1545255996</td>
+                </tr>
+                <tr>
+                    <td>Ep2: Atak klonow</td>
+                    <td>909516234</td>
+                </tr>
+                <tr>
+                    <td>Ep3: Zemsta sithow</td>
+                    <td>1102220231</td>
+                </tr>
+                <tr>
+                    <td>Ep4: Nowa nadzieja</td>
+                    <td>3392374146</td>
+                </tr>
+                <tr>
+                    <td>Ep5: Imperium kontratakuje</td>
+                    <td>1807165240</td>
+                </tr>
+                <tr>
+                    <td>Ep6: Powrot jedi</td>
+                    <td>1470439498</td>
+                </tr>
+                <tr>
+                    <td>Ep7: Przebudzenie mocy</td>
+                    <td>2126017701</td>
+                </tr>
+                <tr>
+                    <td>Ep8: Ostatni jedi</td>
+                    <td>1344811874</td>
+                </tr>
+                </tbody>
+            </table>
+            <form class="needs-validation" novalidate>
+                <div id="formularz-logo">
+                    <h1>ANKIETA</h1>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Imię</label>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Imię" required>
+                        <div class="valid-feedback">
+                            Poprawne!
+                        </div>
+						<div class="invalid-feedback">
+                            Podaj poprawne imię.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Nazwisko</label>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Nazwisko" required>
+                        <div class="valid-feedback">
+                            Poprawne!
+                        </div>
+						<div class="invalid-feedback">
+                            Podaj poprawne nazwisko.
+                        </div>
+                    </div>
+                </div>
+                <fieldset class="form-group wybor-plci">
+                    <div class="row">
+                        <label class="col-form-label col-sm-2 pt-0">Płeć</label>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input kobieta" type="radio" name="genderRadio" id="gender1"
+                                       value="option1"
+                                       checked>
+                                <label  for="gender1">
+                                    Kobieta
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genderRadio" id="gender2"
+                                       value="option2">
+                                <label for="gender2">
+                                    Mężczyzna
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group-row">
+                    <div class="col-sm-2"><label for="temat">Skąd się dowiedziałeś o naszej stronie:</label></div>
+                    <div class="col-sm-8">
+                        <select class="form-control" id="temat">
+                            <option>Internet</option>
+                            <option>Znajomi</option>
+                            <option>Telewizja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tresc">Uwagi</label>
+                    <textarea class="form-control" rows="4" id="tresc" name="tresc"
+                              placeholder="Powiedz nam co powinniśmy zmienić ;)" required></textarea>
+							  <div class="invalid-feedback">
+                            Prosimy podziel się swoimi odczuciami.
+                        </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="validationCustom03" required>
+                        <label class="form-check-label" for="validationCustom03">
+                            Zgadzam się na przetwarzanie moich danych
+                        </label>
+                        <div class="invalid-feedback">
+                            Musisz się zgodzić przed wysłaniem.
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Wyślij</button>
+            </form>
+
+</div>
+</div>
+
+</body>
+</html>
+
